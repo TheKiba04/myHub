@@ -1,0 +1,25 @@
+.Timer {
+  font-size: 15em;
+  line-height: 100%;
+}
+.Timer_buttons_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 2%;
+  & button {
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    & svg {
+      width: 80%;
+      height: 80%;
+    }
+    &:hover {
+      background-color: rgb(96, 105, 112);
+      & svg {
+        fill: white;
+      }
+    }
+  }
+}
