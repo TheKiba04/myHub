@@ -6,10 +6,10 @@ import "./header.css";
 const Header = () => {
   return (
     <Grid container className="Header_container">
-      <Grid item display="flex" alignItems="center">
+      <Grid item className="Header_icon_container">
         <BeenhereIcon />
       </Grid>
-      <Grid item xs={3}>
+      <Grid item>
         <Typography component="h1" variant="h4" gutterBottom={false}>
           myHub
         </Typography>

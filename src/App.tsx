@@ -15,28 +15,40 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box component="main" className="App">
-        <Grid container className="App-container">
-          <Grid item xs={8}>
-            <Grid container component="section">
-              <Grid item xs={12}>
-                <Header />
-              </Grid>
+      <Box className="App-wrapper">
+        <Grid
+          container
+          className="App-container"
+          justifyContent="space-between"
+          flexDirection="column"
+        >
+          <Grid
+            item
+            xs={12}
+            flexDirection="column"
+            alignItems="center"
+            flexGrow={1}
+            minHeight="90%"
+          >
+            <Header />
+            <Grid container rowGap={3}>
               <Grid item xs={12}>
                 <DistanceSelector setDistance={setDistance} />
-                <Timer distance={distance} />
               </Grid>
               <Grid item xs={12}>
-                <Footer />
+                <Timer distance={distance} />
               </Grid>
             </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <Grid container component="section">
+          {/* <Grid item xs={12} md={4}>
+            <Grid container>
               <Grid item xs={12}>
                 Side part
               </Grid>
             </Grid>
+          </Grid> */}
+          <Grid item xs={12}>
+            <Footer />
           </Grid>
         </Grid>
       </Box>

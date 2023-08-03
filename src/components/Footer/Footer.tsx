@@ -4,7 +4,7 @@ import "./footer.css";
 const Footer = () => (
   <Grid container component="footer" className="App-footer">
     <Grid item xs={12}>
-      <Typography variant="caption">© 2023 myHub</Typography>
+      <Typography variant="caption">© 2023 myHub - Made in Ukraine.</Typography>
     </Grid>
   </Grid>
 );

@@ -1,6 +1,6 @@
 .Timer {
-  font-size: 15rem !important;
-  line-height: 100%;
+  line-height: 90%;
+  padding-bottom: .1em;
 }
 .Timer_buttons_container {
   display: flex;
