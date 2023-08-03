@@ -9,12 +9,19 @@ import DistanceSelector from "./components/DistanceSelector/DistanceSelector";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Grid from "@mui/material/Grid";
+import NavBar from "./components/NavBar/NavBar";
+import Menu from "./components/Menu/Menu";
 
 const App = () => {
   const [distance, setDistance] = useState<number>(0);
+  const [isSideContentOpen, setIsSideContentOpen] = useState<boolean>(false);
+
+  const handleMenu = () => setIsSideContentOpen((prev) => !prev);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <Menu isOpen={isSideContentOpen} onClick={handleMenu} />
       <Box className="App-wrapper">
         <Grid
           container
@@ -30,23 +37,34 @@ const App = () => {
             flexGrow={1}
             minHeight="90%"
           >
-            <Header />
-            <Grid container rowGap={3}>
-              <Grid item xs={12}>
-                <DistanceSelector setDistance={setDistance} />
+            <Grid
+              container
+              justifyContent="center"
+              rowGap={3}
+              alignItems="center"
+            >
+              <Grid item xs={12} md={7}>
+                <Header />
+                <Grid container rowGap={2}>
+                  <Grid item xs={12}>
+                    <DistanceSelector setDistance={setDistance} />
+                  </Grid>
+                  <Grid item xs={12}>
+                    <Timer distance={distance} />
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid item xs={12}>
-                <Timer distance={distance} />
-              </Grid>
+              {isSideContentOpen && (
+                <Grid
+                  item
+                  xs={12}
+                  md={5}
+                >
+                  <NavBar />
+                </Grid>
+              )}
             </Grid>
           </Grid>
-          {/* <Grid item xs={12} md={4}>
-            <Grid container>
-              <Grid item xs={12}>
-                Side part
-              </Grid>
-            </Grid>
-          </Grid> */}
           <Grid item xs={12}>
             <Footer />
           </Grid>
