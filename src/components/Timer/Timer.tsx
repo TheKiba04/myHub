@@ -5,7 +5,8 @@ import StopIcon from "@mui/icons-material/Stop";
 import "./timer.css";
 import moment, { Moment } from "moment";
 import IconButton from "@mui/material/IconButton";
-import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import { Typography } from "@mui/material";
 
 const Timer = ({ distance }: { distance: number }) => {
   const initDistance = moment(distance * 60 * 1000);
@@ -50,23 +51,34 @@ const Timer = ({ distance }: { distance: number }) => {
   useEffect(() => {
     setTime(moment(distance * 60 * 1000));
   }, [distance]);
-  
 
   return (
-    <>
-      <Box className="Timer">{time.format("mm:ss")}</Box>
-      <Box className="Timer_buttons_container">
-        <IconButton onClick={handleStart} id="start">
-          <PlayArrowIcon color="success" />
-        </IconButton>
-        <IconButton onClick={handlePause}>
-          <PauseIcon />
-        </IconButton>
-        <IconButton onClick={handleStop}>
-          <StopIcon color="error" />
-        </IconButton>
-      </Box>
-    </>
+    <Grid container>
+      <Grid item xs={12}>
+        <Typography variant="h1" component="h1" className="Timer">
+          {time.format("mm:ss")}
+        </Typography>
+      </Grid>
+      <Grid item xs={12}>
+        <Grid container className="Timer_buttons_container">
+          <Grid item>
+            <IconButton onClick={handleStart} id="start">
+              <PlayArrowIcon color="success" />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <IconButton onClick={handlePause}>
+              <PauseIcon />
+            </IconButton>
+          </Grid>
+          <Grid item>
+            <IconButton onClick={handleStop}>
+              <StopIcon color="error" />
+            </IconButton>
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 export default Timer;

@@ -1,5 +1,5 @@
 .Timer {
-  font-size: 15em;
+  font-size: 15rem !important;
   line-height: 100%;
 }
 .Timer_buttons_container {

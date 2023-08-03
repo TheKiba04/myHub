@@ -1,5 +1,5 @@
 import Button from "@mui/material/Button";
-import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
 import "./distanceSelector.css";
 
 const DistanceSelector = ({
@@ -11,29 +11,23 @@ const DistanceSelector = ({
     setDistance(distance);
   };
   return (
-    <Box className="DistanceSelector">
-      <Button
-        variant="contained"
-        onClick={handleSelect(30)}
-        size="small"
-      >
-        Large
-      </Button>
-      <Button
-        variant="contained"
-        onClick={handleSelect(15)}
-        size="small"
-      >
-        Medium
-      </Button>
-      <Button
-        variant="contained"
-        onClick={handleSelect(5)}
-        size="small"
-      >
-        Small
-      </Button>
-    </Box>
+    <Grid container className="DistanceSelector">
+      <Grid item>
+        <Button variant="contained" onClick={handleSelect(30)} size="small">
+          Large
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button variant="contained" onClick={handleSelect(15)} size="small">
+          Medium
+        </Button>
+      </Grid>
+      <Grid item>
+        <Button variant="contained" onClick={handleSelect(5)} size="small">
+          Small
+        </Button>
+      </Grid>
+    </Grid>
   );
 };
 

@@ -8,6 +8,7 @@ import { useState } from "react";
 import DistanceSelector from "./components/DistanceSelector/DistanceSelector";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Grid from "@mui/material/Grid";
 
 const App = () => {
   const [distance, setDistance] = useState<number>(0);
@@ -15,20 +16,29 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Box component="main" className="App">
-        <Box component="section" className="App-container">
-          <Header />
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
-            <DistanceSelector setDistance={setDistance} />
-            <Timer distance={distance} />
-          </Box>
-          <Footer />
-        </Box>
+        <Grid container className="App-container">
+          <Grid item xs={8}>
+            <Grid container component="section">
+              <Grid item xs={12}>
+                <Header />
+              </Grid>
+              <Grid item xs={12}>
+                <DistanceSelector setDistance={setDistance} />
+                <Timer distance={distance} />
+              </Grid>
+              <Grid item xs={12}>
+                <Footer />
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item xs={4}>
+            <Grid container component="section">
+              <Grid item xs={12}>
+                Side part
+              </Grid>
+            </Grid>
+          </Grid>
+        </Grid>
       </Box>
     </ThemeProvider>
   );
