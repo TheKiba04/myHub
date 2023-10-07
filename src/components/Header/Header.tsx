@@ -11,7 +11,7 @@ const Header = () => {
       </Grid>
       <Grid item>
         <Typography component="h1" variant="h4" gutterBottom={false}>
-          myHub
+          myHub - Task Manager
         </Typography>
       </Grid>
     </Grid>

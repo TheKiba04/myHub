@@ -55,7 +55,7 @@ const Timer = ({ distance }: { distance: number }) => {
   return (
     <Grid container>
       <Grid item xs={12}>
-        <Typography variant="body1" className="Timer">
+        <Typography variant="caption" className="Timer">
           {time.format("mm:ss")}
         </Typography>
       </Grid>

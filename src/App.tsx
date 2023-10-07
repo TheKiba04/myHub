@@ -1,19 +1,17 @@
-import Timer from "./components/Timer/Timer";
 import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import Box from "@mui/material/Box";
 import theme from "./theme";
-import { useState } from "react";
-import DistanceSelector from "./components/DistanceSelector/DistanceSelector";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Grid from "@mui/material/Grid";
+import Tracker from "./components/Tracker/Tracker";
 import NavBar from "./components/NavBar/NavBar";
 import Menu from "./components/Menu/Menu";
+import { useState } from "react";
 
 const App = () => {
-  const [distance, setDistance] = useState<number>(0);
   const [isSideContentOpen, setIsSideContentOpen] = useState<boolean>(false);
 
   const handleMenu = () => setIsSideContentOpen((prev) => !prev);
@@ -45,14 +43,9 @@ const App = () => {
             >
               <Grid item xs={12} md={7}>
                 <Header />
-                <Grid container rowGap={2}>
-                  <Grid item xs={12}>
-                    <DistanceSelector setDistance={setDistance} />
-                  </Grid>
-                  <Grid item xs={12}>
-                    <Timer distance={distance} />
-                  </Grid>
-                </Grid>
+              </Grid>
+              <Grid item xs={12} md={7}>
+              <Tracker />
               </Grid>
               {isSideContentOpen && (
                 <Grid

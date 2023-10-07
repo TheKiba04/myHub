@@ -1,11 +1,12 @@
 import Grid from "@mui/material/Grid";
 import AssignmentIcon from "@mui/icons-material/Assignment";
-import InfoIcon from "@mui/icons-material/Info";
+import EngineeringIcon from "@mui/icons-material/Engineering";
 import IconButton from "@mui/material/IconButton";
 import { useState } from "react";
 import TaskList from "../TaskList/TaskList";
 import React from "react";
 import "./navbar.css";
+import DefaultPage from "../DefaultPage/DefaultPage";
 
 const SideMenu = () => {
   const [isContentOpen, setIsContentOpen] = useState<boolean>(true);
@@ -15,20 +16,8 @@ const SideMenu = () => {
     switch (selectedMenuItem) {
       case "taskList":
         return <TaskList />;
-      case "info":
-        return (
-          <>
-            <div
-              style={{
-                minHeight: "400px",
-              }}
-            >
-              INFO
-            </div>
-          </>
-        );
       default:
-        return <TaskList />;
+        return <DefaultPage type="under_constuction" />;
     }
   };
 
@@ -45,7 +34,15 @@ const SideMenu = () => {
       sx={{ flexDirection: { xs: "column-reverse", md: "row" } }}
     >
       {isContentOpen && (
-        <Grid item xs={10} maxWidth="100%" className="Navbar-content">
+        <Grid
+          item
+          xs={10}
+          className="Navbar-content"
+          maxWidth="100%"
+          minHeight="400px"
+          maxHeight="400px"
+          sx={{ overflowY: "auto" }}
+        >
           {getContent()}
         </Grid>
       )}
@@ -65,14 +62,30 @@ const SideMenu = () => {
           </Grid>
           <Grid
             item
-            id="info"
+            id="underConstruction1"
             sx={{
               backgroundColor:
-                selectedMenuItem === "info" ? "rgb(46, 47, 49)" : "inherit",
+                selectedMenuItem === "underConstruction1"
+                  ? "rgb(46, 47, 49)"
+                  : "inherit",
             }}
           >
             <IconButton name="info" onClick={handleClick}>
-              <InfoIcon sx={{ fill: "white" }} />
+              <EngineeringIcon sx={{ fill: "white" }} />
+            </IconButton>
+          </Grid>
+          <Grid
+            item
+            id="underConstruction2"
+            sx={{
+              backgroundColor:
+                selectedMenuItem === "underConstruction2"
+                  ? "rgb(46, 47, 49)"
+                  : "inherit",
+            }}
+          >
+            <IconButton name="info" onClick={handleClick}>
+              <EngineeringIcon sx={{ fill: "white" }} />
             </IconButton>
           </Grid>
         </Grid>
