@@ -3,12 +3,12 @@ import CssBaseline from "@mui/material/CssBaseline";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import Box from "@mui/material/Box";
 import theme from "./theme";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Header from "../src/components/Header/Header";
+import Footer from "../src/components/Footer/Footer";
 import Grid from "@mui/material/Grid";
-import Tracker from "./components/Tracker/Tracker";
-import NavBar from "./components/NavBar/NavBar";
-import Menu from "./components/Menu/Menu";
+import Tracker from "../src/components/Tracker/Tracker";
+import NavBar from "../src/components/NavBar/NavBar";
+import Menu from "../src/components/Menu/Menu";
 import { useState } from "react";
 
 const App = () => {

@@ -11,23 +11,7 @@ export interface Task {
 }
 
 const TaskList = () => {
-  const [tasks, setTasks] = useState<Task[] | []>([
-    {
-      id: 1,
-      name: "Task 1",
-      time: "",
-    },
-    {
-      id: 2,
-      name: "Task 2",
-      time: "",
-    },
-    {
-      id: 3,
-      name: "Task 3",
-      time: "",
-    },
-  ]);
+  const [tasks, setTasks] = useState<Task[] | []>([]);
   const [activeRadio, setActiveRadio] = useState<number>(0);
   const handleActiveRadio = (event: React.ChangeEvent<HTMLInputElement>) => {
     setActiveRadio(Number(event.target.value));
