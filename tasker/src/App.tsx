@@ -2,7 +2,7 @@ import "./App.css";
 import CssBaseline from "@mui/material/CssBaseline";
 import ThemeProvider from "@mui/material/styles/ThemeProvider";
 import Box from "@mui/material/Box";
-import theme from "./theme";
+import { theme } from "./design-system";
 import Header from "../src/components/Header/Header";
 import Footer from "../src/components/Footer/Footer";
 import Grid from "@mui/material/Grid";

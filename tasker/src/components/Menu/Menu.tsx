@@ -13,11 +13,7 @@ const Menu = ({
   return (
     <Box className="Menu-container">
       <IconButton onClick={onClick}>
-        {isOpen ? (
-          <CloseIcon sx={{ fill: "white" }} />
-        ) : (
-          <MenuIcon sx={{ fill: "white" }} />
-        )}
+        {isOpen ? <CloseIcon /> : <MenuIcon />}
       </IconButton>
     </Box>
   );

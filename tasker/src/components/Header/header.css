@@ -3,7 +3,8 @@
   width: 100%;
   justify-content: center;
   align-items: center;
-  padding: 2em 0;
+  gap: var(--ds-space-1);
+  padding: var(--ds-space-4) 0;
 }
 .Header_icon_container {
   display: flex;

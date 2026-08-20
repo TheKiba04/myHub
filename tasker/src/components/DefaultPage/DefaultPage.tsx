@@ -1,6 +1,7 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import EngineeringIcon from "@mui/icons-material/Engineering";
+import { size, space } from "../../design-system";
 
 const DefaultPage = ({ type }: { type: string }) => {
   return (
@@ -13,15 +14,15 @@ const DefaultPage = ({ type }: { type: string }) => {
             justifyItems: "center",
             alignItems: "center",
             flexDirection: "column",
+            gap: space[2],
             paddingTop: "20%",
           }}
         >
           <EngineeringIcon
             sx={{
-              marginLeft: "5%",
-              width: "150px",
-              height: "150px",
-              fill: "white",
+              width: size.icon.xl,
+              height: size.icon.xl,
+              color: "text.primary",
             }}
           />
           <Typography variant="subtitle2">

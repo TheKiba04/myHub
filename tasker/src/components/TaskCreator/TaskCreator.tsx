@@ -1,6 +1,5 @@
 import { Button, TextField } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import "./taskCreator.css";
 import { useState } from "react";
 
 interface TaskCreatorProps {
@@ -45,12 +44,7 @@ const TaskCreator = ({ onAdd }: TaskCreatorProps) => {
         justifyContent="center"
         alignItems="flex-end"
       >
-        <Button
-          variant="contained"
-          sx={{ backgroundColor: "rgb(99, 108, 115)" }}
-          size="small"
-          onClick={handleAdd}
-        >
+        <Button variant="contained" size="small" onClick={handleAdd}>
           Add
         </Button>
       </Grid>

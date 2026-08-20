@@ -34,7 +34,7 @@ const handleDeleteTask = (id: number) => {
       </Grid>
 
       {tasks.map((task) => (
-        <Grid item key={task.id} xs={12} p={1} borderBottom="1px solid gray">
+        <Grid item key={task.id} xs={12} p={1} sx={{ borderBottom: 1, borderColor: "divider" }}>
           <Grid container justifyContent="space-between" alignItems="center">
             <Grid item xs={1} color="primary">
               <Radio
@@ -47,12 +47,12 @@ const handleDeleteTask = (id: number) => {
               <Typography textAlign="left">{task.name}</Typography>
             </Grid>
             <Grid item xs={1}>
-              <IconButton sx={{ width: "1em", height: "1em" }}>
-                <CloseIcon
-                  color="primary"
-                  onClick={() => handleDeleteTask(task.id)}
-                  sx={{ width: ".6em", height: ".6em" }}
-                />
+              <IconButton
+                aria-label={`Delete ${task.name}`}
+                onClick={() => handleDeleteTask(task.id)}
+                sx={{ width: "1em", height: "1em" }}
+              >
+                <CloseIcon color="primary" sx={{ width: ".6em", height: ".6em" }} />
               </IconButton>
             </Grid>
           </Grid>

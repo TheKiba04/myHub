@@ -5,6 +5,7 @@ import IconButton from "@mui/material/IconButton";
 import { useState } from "react";
 import TaskList from "../TaskList/TaskList";
 import React from "react";
+import { size } from "../../design-system";
 import "./navbar.css";
 import DefaultPage from "../DefaultPage/DefaultPage";
 
@@ -39,8 +40,8 @@ const SideMenu = () => {
           xs={10}
           className="Navbar-content"
           maxWidth="100%"
-          minHeight="400px"
-          maxHeight="400px"
+          minHeight={size.panel.contentHeight}
+          maxHeight={size.panel.contentHeight}
           sx={{ overflowY: "auto" }}
         >
           {getContent()}
@@ -53,11 +54,13 @@ const SideMenu = () => {
             id="taskList"
             sx={{
               backgroundColor:
-                selectedMenuItem === "taskList" ? "rgb(46, 47, 49)" : "inherit",
+                selectedMenuItem === "taskList"
+                  ? "background.paper"
+                  : "inherit",
             }}
           >
             <IconButton name="taskList" onClick={handleClick}>
-              <AssignmentIcon sx={{ fill: "white" }} />
+              <AssignmentIcon />
             </IconButton>
           </Grid>
           <Grid
@@ -66,12 +69,12 @@ const SideMenu = () => {
             sx={{
               backgroundColor:
                 selectedMenuItem === "underConstruction1"
-                  ? "rgb(46, 47, 49)"
+                  ? "background.paper"
                   : "inherit",
             }}
           >
             <IconButton name="info" onClick={handleClick}>
-              <EngineeringIcon sx={{ fill: "white" }} />
+              <EngineeringIcon />
             </IconButton>
           </Grid>
           <Grid
@@ -80,12 +83,12 @@ const SideMenu = () => {
             sx={{
               backgroundColor:
                 selectedMenuItem === "underConstruction2"
-                  ? "rgb(46, 47, 49)"
+                  ? "background.paper"
                   : "inherit",
             }}
           >
             <IconButton name="info" onClick={handleClick}>
-              <EngineeringIcon sx={{ fill: "white" }} />
+              <EngineeringIcon />
             </IconButton>
           </Grid>
         </Grid>
